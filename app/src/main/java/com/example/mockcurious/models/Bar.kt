@@ -1,10 +1,17 @@
 package com.example.mockcurious.models
 
-data class Bar(val name: String,
-               val address: String,
-               val image: String,
-               val description: String,
-               val barFilters: Filters)
+import java.util.*
+
+data class Bar(
+    val uuid: UUID,
+    val name: String? = "",
+    val address: String? =  "",
+    val city: String? = "",
+    val zipcode: String? = "",
+    val image: String? = "",
+    val description: String? = "",
+    val barFilters: Filters? = null
+)
 
 data class Filters(val atmosphere: String,
                    val barServiceOptions: List<ServiceOption>,

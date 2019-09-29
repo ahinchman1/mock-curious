@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
         android:orientation="vertical"
-        tools:context=".MainActivity" >
+        tools:context=".BarCardListActivity" >
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/bar_card_list"

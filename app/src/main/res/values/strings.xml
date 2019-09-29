@@ -4,4 +4,5 @@
     <string name="content_description_bar_image">Image preview of bar</string>
     <string name="bar_location">Bar Address/Neighborhood</string>
     <string name="bar_description">Bar description</string>
+    <string name="add_new_bar">Add new bar</string>
 </resources>
