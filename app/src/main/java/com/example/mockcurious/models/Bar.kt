@@ -11,3 +11,14 @@ data class Filters(val atmosphere: String,
                    val conversationFriendly: Boolean,
                    val petFriendly: Boolean,
                    val closingTime: String)
+
+data class ServiceOption(
+    val coffeeEspresso: Boolean,
+    val nitroCoffee: Boolean,
+    val mocktails: Boolean,
+    val appetizers: Boolean,
+    val arcadeGames: Boolean,
+    val poolDarts: Boolean,
+    val liveMusic: Boolean,
+    val trivia: Boolean
+)

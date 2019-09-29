@@ -18,4 +18,3 @@ interface DaggerArchComponentModule {
 annotation class ViewModelKey(
     val value: KClass<out ViewModel>
 )
-

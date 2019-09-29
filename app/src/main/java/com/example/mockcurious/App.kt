@@ -2,23 +2,34 @@ package com.example.mockcurious
 
 import android.app.Activity
 import android.app.Application
+import android.util.Log
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
+import timber.log.Timber
 import javax.inject.Inject
 
-class App : Application(), HasActivityInjector {
+open class App : Application() { //, HasActivityInjector {
+
+    lateinit var appComponent: AppComponent
 
     @Inject
-    lateinit var dispatchingActivityInjector: DispatchingAndroidInjector<Activity>
+    var dispatchingActivityInjector: DispatchingAndroidInjector<Activity>? = null
 
     override fun activityInjector(): AndroidInjector<Activity> = dispatchingActivityInjector
 
     override fun onCreate() {
         super.onCreate()
-        DaggerAppComponent.builder()
+
+        /*appComponent = DaggerAppCompon.builder()
             .context(this)
             .build()
-            .inject(this)
+            .inject(this)*/
+    }
+
+    private class CrashReportingTree : Timber.Tree() {
+        override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
+            Log.println(priority, tag, message)
+        }
     }
 }
